@@ -18,13 +18,12 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 
-from django.views.generic import TemplateView
-from myapp.views import contact, upload, signup
+from myapp.views import contact, upload, signup, index, login
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^index$', TemplateView.as_view(template_name='index.html')),
-    url(r'^login$', TemplateView.as_view(template_name='login.html')),
+    url(r'^index$', index, name='index'),
+    url(r'^login$', login, name='login'),
     url(r'^contact$', contact, name='contact'),
     url(r'^upload$', upload, name='upload'),
     url(r'^signup$', signup, name='signup'),

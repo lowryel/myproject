@@ -7,6 +7,12 @@
     <title>Document</title>
 </head>
 <body>
+    {% if user.is_authenticated %}
+    <p>Welcome, {{user.username}}</p>
+    {% else %}
+    <p>Welcome to the homepage</p>
+    {% endif %}
+    <a href="signup">Signup</a>
     <p>
         This is my new home page
     </p>
